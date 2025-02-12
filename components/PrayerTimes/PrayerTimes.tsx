@@ -59,9 +59,9 @@ export default function PrayerTimes({
           [&>th]:border-t-0 [&>th:last-of-type]:border-r-0"
         >
           <th className="sr-only">Prayer time</th>
-          <th className="md:text-5xl">Begins</th>
-          <th className="md:text-5xl">Jama&apos;ah</th>
-          <th className="md:text-5xl">Tomorrow</th>
+          <th className="md:text-5xl">Adzan</th>
+          <th className="md:text-5xl">Iqomah</th>
+          <th className="md:text-5xl">Besok</th>
         </tr>
       </thead>
       <tbody>
