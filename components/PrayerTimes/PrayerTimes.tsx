@@ -23,10 +23,16 @@ export default function PrayerTimes({
       data: today.zuhr,
       tomorrow: tomorrow.zuhr,
     },
-    {
-      label: "Asr",
-      data: today.asr,
-      tomorrow: tomorrow.asr,
+    { 
+      label: "Asr", 
+      data: { 
+        start: today.asr.start,  // Keep only main Asr time
+        congregation_start: today.asr.congregation_start, 
+      }, 
+      tomorrow: { 
+        start: tomorrow.asr.start,  
+        congregation_start: tomorrow.asr.congregation_start, 
+      } 
     },
     {
       label: "Maghrib",
