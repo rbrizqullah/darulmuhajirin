@@ -84,13 +84,6 @@ export default function PrayerTimes({
             </th>
             <td className="text-xl md:text-6xl">
               {moment(prayer.data.start, ["HH:mm"]).format("h:mm")}
-              {prayer.data?.start_secondary ? (
-                <div className="block mt-1 md:mt-2">
-                  {moment(prayer.data.start_secondary, ["HH:mm"]).format(
-                    "h:mm",
-                  )}
-                </div>
-              ) : null}
             </td>
             <td className={`font-bold text-xl md:text-6xl`}>
               <span
