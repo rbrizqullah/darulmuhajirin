@@ -17,6 +17,5 @@ export interface UpcomingPrayerTimes extends DailyPrayerTime {
 
 export interface PrayerTime {
   start: string
-  start_secondary?: string
   congregation_start: string
 }
