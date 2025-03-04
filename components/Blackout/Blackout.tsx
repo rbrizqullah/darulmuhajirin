@@ -13,12 +13,8 @@ export default function Blackout({
   const [blackout, setBlackout] = useState(false)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setBlackout(isBlackout(prayerTimeToday))
-    }, 10 * 1000)
-
-    return () => clearInterval(interval)
-  }, [setBlackout, prayerTimeToday])
+    setBlackout(false) // Always set to false to disable blackout
+  }, [])
 
   return (
     <div className="hidden md:block">
