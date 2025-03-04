@@ -14,10 +14,9 @@ export default function Blackout({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Force blackout to always be false
-      setBlackout(false)
+      setBlackout(isBlackout(prayerTimeToday))
     }, 10 * 1000)
-  
+
     return () => clearInterval(interval)
   }, [setBlackout, prayerTimeToday])
 
