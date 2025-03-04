@@ -1,4 +1,3 @@
-import Blackout from "@/components/Blackout/Blackout"
 import Clock from "@/components/Clock/Clock"
 import Date from "@/components/Date/Date"
 import MosqueMetadata from "@/components/MosqueMetadata/MosqueMetadata"
@@ -80,7 +79,7 @@ export default async function Home() {
         </div>
         <ServiceWorker />
       </main>
-      <Blackout prayerTimeToday={today} />
+      {/* Blackout component removed */}
     </>
   )
 }
