@@ -31,11 +31,11 @@ export function getNextPrayer(today: DailyPrayerTime) {
   const currentTime = moment();
 
   const todaysTimes = [
-    today.fajr.congregation_start,
-    today.zuhr.congregation_start,
-    today.asr.congregation_start,
-    today.maghrib.congregation_start,
-    today.isha.congregation_start,
+    moment(today.fajr.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
+    moment(today.zuhr.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
+    moment(today.asr.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
+    moment(today.maghrib.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
+    moment(today.isha.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
   ];
 
   let nextPrayertime = {
@@ -44,9 +44,7 @@ export function getNextPrayer(today: DailyPrayerTime) {
   };
 
   todaysTimes.forEach((time, index) => {
-    const adjustedTime = moment(time, "HH:mm").subtract(5, "minutes"); // Subtract 5 minutes
-
-    if (currentTime < adjustedTime && !nextPrayertime.today) {
+    if (currentTime < moment(time, "HH:mm") && !nextPrayertime.today) {
       nextPrayertime = {
         today: true,
         prayerIndex: index,
