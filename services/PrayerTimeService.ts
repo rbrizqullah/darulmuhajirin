@@ -28,29 +28,42 @@ export function isBlackout(prayerTimes: DailyPrayerTime) {
 }
 
 export function getNextPrayer(today: DailyPrayerTime) {
-  const currentTime = moment();
+  const currentTime = moment()
 
   const todaysTimes = [
+<<<<<<< HEAD
     moment(today.fajr.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
     moment(today.zuhr.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
     moment(today.asr.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
     moment(today.maghrib.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
     moment(today.isha.congregation_start, "HH:mm").subtract(5, "minutes").format("HH:mm"),
   ];
+=======
+    today.fajr.congregation_start,
+    today.zuhr.congregation_start,
+    today.asr.congregation_start,
+    today.maghrib.congregation_start,
+    today.isha.congregation_start,
+  ]
+>>>>>>> parent of 0f1179d (Update adjust time)
 
   let nextPrayertime = {
     today: false,
     prayerIndex: 0,
-  };
+  }
 
   todaysTimes.forEach((time, index) => {
+<<<<<<< HEAD
     if (currentTime < moment(time, "HH:mm") && !nextPrayertime.today) {
+=======
+    if (currentTime < moment(time, ["HH:mm"]) && !nextPrayertime.today) {
+>>>>>>> parent of 0f1179d (Update adjust time)
       nextPrayertime = {
         today: true,
         prayerIndex: index,
-      };
+      }
     }
-  });
+  })
 
-  return nextPrayertime;
+  return nextPrayertime
 }
