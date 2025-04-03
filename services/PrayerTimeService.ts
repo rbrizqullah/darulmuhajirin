@@ -45,6 +45,9 @@ export function getNextPrayer(today: DailyPrayerTime) {
     today.maghrib.congregation_start,
     today.isha.congregation_start,
   ]
+<<<<<<< HEAD
+>>>>>>> parent of 0f1179d (Update adjust time)
+=======
 >>>>>>> parent of 0f1179d (Update adjust time)
 
   let nextPrayertime = {
@@ -54,7 +57,11 @@ export function getNextPrayer(today: DailyPrayerTime) {
 
   todaysTimes.forEach((time, index) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (currentTime < moment(time, "HH:mm") && !nextPrayertime.today) {
+=======
+    if (currentTime < moment(time, ["HH:mm"]) && !nextPrayertime.today) {
+>>>>>>> parent of 0f1179d (Update adjust time)
 =======
     if (currentTime < moment(time, ["HH:mm"]) && !nextPrayertime.today) {
 >>>>>>> parent of 0f1179d (Update adjust time)
